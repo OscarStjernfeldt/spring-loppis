@@ -4,8 +4,6 @@ import org.springframework.stereotype.Service;
 import se.iths.springloppis.entity.ItemEntity;
 import se.iths.springloppis.repository.ItemRepository;
 
-import javax.persistence.EntityExistsException;
-import javax.persistence.EntityNotFoundException;
 import java.util.Optional;
 
 @Service
