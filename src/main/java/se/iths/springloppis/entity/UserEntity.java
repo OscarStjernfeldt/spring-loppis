@@ -1,5 +1,8 @@
 package se.iths.springloppis.entity;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
+import com.fasterxml.jackson.annotation.JsonProperty;
+
 import javax.persistence.CascadeType;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
@@ -68,6 +71,8 @@ public class UserEntity {
         this.items = items;
     }
 
+    @JsonIgnore
+    @JsonProperty(value = "password", required = true)
     public String getPassword() {
         return password;
     }
