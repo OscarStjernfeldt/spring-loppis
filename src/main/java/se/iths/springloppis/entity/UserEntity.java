@@ -1,6 +1,5 @@
 package se.iths.springloppis.entity;
 
-import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.annotation.JsonProperty;
 
 import javax.persistence.CascadeType;
@@ -26,6 +25,8 @@ public class UserEntity {
     @NotEmpty
     private String email;
 
+    @NotEmpty
+    @JsonProperty(access = JsonProperty.Access.WRITE_ONLY)
     private String password;
 
     @OneToMany(mappedBy = "user", cascade = CascadeType.ALL)
@@ -71,8 +72,6 @@ public class UserEntity {
         this.items = items;
     }
 
-    @JsonIgnore
-    @JsonProperty(value = "password", required = true)
     public String getPassword() {
         return password;
     }
