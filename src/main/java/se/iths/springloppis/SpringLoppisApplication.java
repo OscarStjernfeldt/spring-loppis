@@ -22,5 +22,4 @@ public class SpringLoppisApplication {
             roleRepository.save(new RoleEntity("ROLE_USER"));
         };
     }
-
 }
